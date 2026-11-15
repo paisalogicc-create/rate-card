@@ -31,5 +31,10 @@ function hisaab() {
   var rate = document.getElementById('rate').value;
   var total = kilo * rate;
   document.getElementById('total').innerHTML = 'Total: ₹' + total;
-}
+        var diye = document.getElementById('diye').value;
+if (diye < total) {
+  document.getElementById('baaki').innerHTML = 'Paisa kam hai';
+} else {
+  document.getElementById('baaki').innerHTML = 'Baaki paise: ₹' + (diye - total);
+}  }
 </script>

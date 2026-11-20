@@ -14,9 +14,7 @@ li { font-size: 24px }
 </head>
 <body>
 <h1>Practice Dairy and Mithai Items</h1>
-
-<p> Hamare pass Dairy Items, Bakery Items, Mithai
-  , And medicine, Miltihai</p>
+<p>Hamare pass Dairy Items, Bakery Items, Mithai aur Medicine</p>
 <ul>
 <li>Amul Milk=32rs</li>
 <li>Milk cake-mithai=500rs/kg</li>
@@ -49,14 +47,18 @@ href="https://wa.me/919372740245" target="_blank">WhatsApp pe order karo</a>
 <p id="baaki"></p>
 <script>
 function hisaab() {
-  var kilo = document.getElementById('kilo').value;
-  var rate = document.getElementById('rate').value;
+  var kilo = Number(document.getElementById('kilo').value);
+  var rate = Number(document.getElementById('rate').value);
+  var diye = Number(document.getElementById('diye').value);
   var total = kilo * rate;
   document.getElementById('total').innerHTML = 'Total: ₹' + total;
-        var diye = document.getElementById('diye').value;
-if (diye < total) {
-  document.getElementById('baaki').innerHTML = 'Paisa kam hai';
-} else {
-  document.getElementById('baaki').innerHTML = 'Baaki paise: ₹' + (diye - total);
-}  }
+  if (diye < total) {
+    document.getElementById('baaki').innerHTML = 'Paisa kam hai: ₹' + (total - diye) + ' aur chahiye';
+  } else {
+    document.getElementById('baaki').innerHTML = 'Baaki paise: ₹' + (diye - total);
+  }
+}
 </script>
+
+</body>
+</html>
